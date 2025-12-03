@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormContext } from "./FormContext";
 
-export default function Background({ formHeight, formWidth, padding, visible, backgroundColor }) {
+export default function Background({ formHeight, formWidth, padding, visible, formColor }) {
   const { setFocusedInput } = useFormContext();
 
   // Unfocus any active input
@@ -21,7 +21,7 @@ export default function Background({ formHeight, formWidth, padding, visible, ba
     >
       <planeGeometry args={[formWidth + (padding * 2), formHeight + (padding * 2)]} />
       <meshStandardMaterial
-        color={backgroundColor}
+        color={formColor}
         metalness={0.1}
         roughness={0.8}
         envMapIntensity={1}

@@ -13,7 +13,8 @@ export default function R3Form({
   cameraPosition = "front",
   shadows = true,
   background = true,
-  backgroundColor = "#ffd700",
+  formColor = "#ffd700",
+  backgroundColor = "#defdfe",
   formWidth = 6,
   formHeight = 6,
   padding = 1,
@@ -25,13 +26,13 @@ export default function R3Form({
 
   return (
     <FormProvider onSubmit={onSubmit}>
-      <div style={{ width, height }}>
+      <div style={{ width, height, backgroundColor }}>
         <Canvas
           shadows={shadows}
           camera={{ position: getCameraPosition(cameraPosition, cameraDistance, formHeight) }}
         >
           <OrbitControls />
-            <Background visible={background} formHeight={formHeight} formWidth={formWidth} padding={padding} backgroundColor={backgroundColor} />
+            <Background visible={background} formHeight={formHeight} formWidth={formWidth} padding={padding} formColor={formColor} />
           
           <ambientLight intensity={0.8} />
           <directionalLight
