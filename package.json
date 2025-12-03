@@ -1,0 +1,34 @@
+{
+  "name": "r3form",
+  "version": "0.3.0",
+  "description": "A modular 3D React form library built with react-three-fiber",
+  "main": "dist/r3form.cjs.js",
+  "module": "dist/r3form.es.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "keywords": ["react", "three.js", "react-three-fiber", "3d", "form", "r3form"],
+  "author": "TomH",
+  "license": "MIT",
+  "dependencies": {
+    "@react-three/fiber": "^9.0.0",
+    "@react-three/drei": "^10.0.0",
+    "three": "^0.160.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "vite": "^7.2.6",
+    "@vitejs/plugin-react": "^5.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
