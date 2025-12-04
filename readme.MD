@@ -38,7 +38,7 @@ Watch the video for instructions, or follow the steps below:
 Import required components from `r3form`.
 
 ```jsx
-import { R3Form, Input3D, Button3D } from "r3form";
+import { R3Form, Input3D, SubmitButton } from "r3form";
 ```
 
 
