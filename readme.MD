@@ -2,7 +2,7 @@
 
 #### A React Three Fiber-based 3D form system for interactive UI elements in 3D space.  
 ---
-![R3Form Preview](https://raw.githubusercontent.com/DevTomUK/r3form/refs/heads/main/dist/form.png)
+![R3Form Preview](https://github.com/DevTomUK/r3form/blob/main/r3form.png?raw=true)
 ---
 #### ***`R3Form` allows you to build 3D forms with interactive inputs, dynamic borders, camera targeting, and smooth hover/press animations.***
 ---
