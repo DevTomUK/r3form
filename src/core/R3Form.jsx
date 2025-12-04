@@ -34,7 +34,7 @@ export default function R3Form({
           <OrbitControls />
             <Background visible={background} formHeight={formHeight} formWidth={formWidth} padding={padding} formColor={formColor} />
           
-          <ambientLight intensity={0.8} />
+          <ambientLight intensity={1} />
           <directionalLight
             position={[15, 20, 40]}
             intensity={0.4}
