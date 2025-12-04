@@ -32,7 +32,7 @@ yarn add r3form
 
 Click below to watch the video guide, or follow the steps below:
 
-[![Watch the video](https://github.com/DevTomUK/r3form/blob/main/r3form2.png)](https://youtu.be/YyEQybPI8i0)
+[![Watch the video](https://github.com/DevTomUK/r3form/blob/main/r3formYT.png?raw=true)](https://youtu.be/YyEQybPI8i0)
 
 
 Import required components from `r3form`.
