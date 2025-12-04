@@ -24,8 +24,8 @@ export default function SubmitButton({
       depth={depth}
       radius={radius}
       smoothness={smoothness}
-      color={color || "#00cc88"}
-      hoverColor={hoverColor || "#00ffaa"}
+      color={color}
+      hoverColor={hoverColor}
       pressDepth={pressDepth}
       label={label}
       fontSize={fontSize}

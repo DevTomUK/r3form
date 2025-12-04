@@ -111,7 +111,7 @@ export default function Input3D({
 
     // Border color + emissive glow
     const targetColor = new THREE.Color(
-      isActive ? "#00ffff" : isHovered ? "#ababab" : "#232323"
+      isActive ? "#00ffff" : isHovered ? "#ffffffff" : "#232323"
     );
     const targetEmissive = new THREE.Color(
       isActive ? "#00ffff" : isHovered ? "#444444" : "#000000"

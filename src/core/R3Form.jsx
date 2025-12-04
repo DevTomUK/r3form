@@ -13,7 +13,7 @@ export default function R3Form({
   cameraPosition = "front",
   shadows = true,
   background = true,
-  formColor = "#ffd700",
+  formColor = "#e7da8f",
   backgroundColor = "#defdfe",
   formWidth = 6,
   formHeight = 6,
