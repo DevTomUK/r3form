@@ -30,6 +30,11 @@ yarn add r3form
 
 ## Usage
 
+Watch the video for instructions, or follow the steps below:
+
+[![Watch the video](https://github.com/DevTomUK/r3form/blob/main/r3form2.png)](https://youtu.be/YyEQybPI8i0)
+
+
 Import required components from `r3form`.
 
 ```jsx
