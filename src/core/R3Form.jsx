@@ -31,7 +31,6 @@ export default function R3Form({
           shadows={shadows}
           camera={{ position: getCameraPosition(cameraPosition, cameraDistance, formHeight) }}
         >
-          <OrbitControls />
             <Background visible={background} formHeight={formHeight} formWidth={formWidth} padding={padding} formColor={formColor} />
           
           <ambientLight intensity={1} />
