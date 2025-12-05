@@ -1,7 +1,7 @@
 {
   "name": "r3form",
-  "version": "0.3.8",
-  "description": "A modular 3D React form library built with react-three-fiber",
+  "version": "0.3.10",
+  "description": "Build immersive, modular 3D forms in React with r3form — powered by react-three-fiber.",
   "main": "dist/r3form.cjs.js",
   "module": "dist/r3form.es.js",
   "type": "module",

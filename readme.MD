@@ -6,6 +6,8 @@
 ![R3Form Demo](https://github.com/DevTomUK/r3form/blob/main/r3formDisplay.gif?raw=true)
 
 ###### `R3Form` allows you to build 3D forms with interactive inputs, dynamic borders, camera targeting, and smooth hover/press animations.
+
+###### [GitHub Repo](https://github.com/DevTomUK/r3form)
 ---
 
 ## Features
@@ -167,4 +169,13 @@ MIT © Tom H
 - Designed to work with stacked 3D elements; calculates height position and gaps for elements from form height.
 - Supports smooth hover and press animations with `lerp` for performance-friendly interactions.
 - Integrates seamlessly with `@react-three/fiber` and `@react-three/drei`.
-- Still in development - please fork the repo if you'd like to contribute!
+
+
+---
+
+### Contribute
+
+Feel free to help with this project and become a contributor! Please fork the repo and add new 3D form elements, following the structure of the current elements.
+If you find this package helpful then please help it grow by giving it a star on GitHub!
+
+Check out the [GitHub Repo](https://github.com/DevTomUK/r3form)
