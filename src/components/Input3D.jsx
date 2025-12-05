@@ -81,7 +81,10 @@ export default function Input3D({
     const handleKey = (e) => {
       if (e.key === "Backspace") {
         setValue(name, value.slice(0, -1));
-      } else if (e.key.length === 1 && inputTextRef.current.geometry.boundingBox.max.x < width - 0.7) {
+      } else if (
+        e.key.length === 1 &&
+        inputTextRef.current.geometry.boundingBox.max.x < width - 0.7
+      ) {
         setValue(name, value + e.key);
       }
       e.preventDefault();
@@ -94,7 +97,8 @@ export default function Input3D({
   // Animation Loop
   useFrame((state) => {
     // Caret blink
-    if (isActive) setCursorVisible(Math.floor(state.clock.getElapsedTime() * 2) % 2 === 0);
+    if (isActive)
+      setCursorVisible(Math.floor(state.clock.getElapsedTime() * 2) % 2 === 0);
 
     // Caret follows text width
     if (caretRef.current && inputTextRef.current) {
@@ -103,8 +107,12 @@ export default function Input3D({
     }
 
     // Border color + emissive
-    const targetColor = new THREE.Color(isActive ? "#00ffff" : isHovered ? "#ffffff" : "#232323");
-    const targetEmissive = new THREE.Color(isActive ? "#00ffff" : isHovered ? "#444444" : "#000000");
+    const targetColor = new THREE.Color(
+      isActive ? "#00ffff" : isHovered ? "#ffffff" : "#232323"
+    );
+    const targetEmissive = new THREE.Color(
+      isActive ? "#00ffff" : isHovered ? "#444444" : "#000000"
+    );
     const emissiveIntensity = isActive ? 1.5 : isHovered ? 0.6 : 0;
 
     borderColor.current.lerp(targetColor, 0.08);
@@ -114,13 +122,16 @@ export default function Input3D({
       const mat = ref.current.material;
       mat.color.copy(borderColor.current);
       mat.emissive.lerp(targetEmissive, 0.1);
-      mat.emissiveIntensity += (emissiveIntensity - mat.emissiveIntensity) * 0.1;
+      mat.emissiveIntensity +=
+        (emissiveIntensity - mat.emissiveIntensity) * 0.1;
     });
 
     // Top border animation
     if (borders.top.current) {
-      borders.top.current.scale.x += (topTargetScale.current - borders.top.current.scale.x) * 0.1;
-      borders.top.current.position.x += (topTargetPos.current - borders.top.current.position.x) * 0.1;
+      borders.top.current.scale.x +=
+        (topTargetScale.current - borders.top.current.scale.x) * 0.1;
+      borders.top.current.position.x +=
+        (topTargetPos.current - borders.top.current.position.x) * 0.1;
     }
 
     // Label animation
@@ -128,13 +139,15 @@ export default function Input3D({
       labelPos.current.lerp(targetLabelPos.current, 0.1);
       labelRef.current.position.copy(labelPos.current);
 
-      currentFontSize.current += (targetFontSize.current - currentFontSize.current) * 0.1;
+      currentFontSize.current +=
+        (targetFontSize.current - currentFontSize.current) * 0.1;
       labelRef.current.fontSize = currentFontSize.current;
     }
 
     // Hover lift
     const targetZ = isHovered ? hoverDepth : 0;
-    groupRef.current.position.z += (targetZ - groupRef.current.position.z) * 0.1;
+    groupRef.current.position.z +=
+      (targetZ - groupRef.current.position.z) * 0.1;
   });
 
   return (
@@ -149,33 +162,67 @@ export default function Input3D({
       onClick={(e) => e.stopPropagation()}
     >
       {/* Borders */}
-      <mesh ref={borders.top} position={[0, height / 2 + borderWidth / 2, borderDepth / 2]}>
+      <mesh
+        receiveShadow
+        castShadow
+        ref={borders.top}
+        position={[0, height / 2 + borderWidth / 2, borderDepth / 2]}
+      >
         <boxGeometry args={[width, borderWidth, borderDepth]} />
         <meshStandardMaterial emissive="black" emissiveIntensity={0} />
       </mesh>
 
-      <mesh ref={borders.bottom} position={[0, -(height / 2 + borderWidth / 2), borderDepth / 2]}>
-        <boxGeometry args={[width + borderWidth * 2, borderWidth, borderDepth]} />
+      <mesh
+        receiveShadow
+        castShadow
+        ref={borders.bottom}
+        position={[0, -(height / 2 + borderWidth / 2), borderDepth / 2]}
+      >
+        <boxGeometry
+          args={[width + borderWidth * 2, borderWidth, borderDepth]}
+        />
         <meshStandardMaterial emissive="black" emissiveIntensity={0} />
       </mesh>
 
-      <mesh ref={borders.left} position={[-(width / 2 + borderWidth / 2), 0, borderDepth / 2]}>
-        <boxGeometry args={[borderWidth, height + borderWidth * 2, borderDepth]} />
+      <mesh
+        receiveShadow
+        castShadow
+        ref={borders.left}
+        position={[-(width / 2 + borderWidth / 2), 0, borderDepth / 2]}
+      >
+        <boxGeometry
+          args={[borderWidth, height + borderWidth * 2, borderDepth]}
+        />
         <meshStandardMaterial emissive="black" emissiveIntensity={0} />
       </mesh>
 
-      <mesh ref={borders.right} position={[width / 2 + borderWidth / 2, 0, borderDepth / 2]}>
-        <boxGeometry args={[borderWidth, height + borderWidth * 2, borderDepth]} />
+      <mesh
+        receiveShadow
+        castShadow
+        ref={borders.right}
+        position={[width / 2 + borderWidth / 2, 0, borderDepth / 2]}
+      >
+        <boxGeometry
+          args={[borderWidth, height + borderWidth * 2, borderDepth]}
+        />
         <meshStandardMaterial emissive="black" emissiveIntensity={0} />
       </mesh>
 
       {/* Label */}
-      <Text ref={labelRef} anchorX="left" color="black">
+      <Text
+        receiveShadow
+        castShadow
+        ref={labelRef}
+        anchorX="left"
+        color="black"
+      >
         {name}
       </Text>
 
       {/* Background */}
       <mesh
+        receiveShadow
+        castShadow
         visible={showFieldBackground}
         position={[0, 0, borderDepth / 2 - 0.01]}
       >
@@ -191,13 +238,21 @@ export default function Input3D({
         anchorX="left"
         anchorY="middle"
         color="black"
+        receiveShadow
+        castShadow
       >
         {value}
       </Text>
 
       {/* Caret */}
       {isActive && (
-        <mesh ref={caretRef} visible={cursorVisible} position={[-width / 2 + 0.3, 0, borderDepth / 2]}>
+        <mesh
+          receiveShadow
+          castShadow
+          ref={caretRef}
+          visible={cursorVisible}
+          position={[-width / 2 + 0.3, 0, borderDepth / 2]}
+        >
           <boxGeometry args={[0.08, height * 0.7, 0.05]} />
           <meshStandardMaterial color="black" />
         </mesh>

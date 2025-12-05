@@ -4,7 +4,6 @@ import { useFormContext } from "./FormContext";
 export default function Background({ formHeight, formWidth, padding, visible, formColor }) {
   const { setFocusedInput } = useFormContext();
 
-  // Unfocus any active input
   const handleBlur = (e) => {
     e.stopPropagation();
     setFocusedInput(null);

@@ -4,6 +4,7 @@ import { FormProvider } from "./FormContext";
 import Background from "./Background";
 import MeasuredWrapper from "./MeasuredWrapper";
 import getCameraPosition from "../utils/getCameraPosition";
+import ToolTip from "../components/ToolTip";
 
 export default function R3Form({
   children,
@@ -45,11 +46,15 @@ export default function R3Form({
     cumulativeHeight += height + gap;
 
     return (
-      <MeasuredWrapper key={index} index={index} onMeasure={handleMeasure}>
+      <>
         <group position={[0, yOffset, 0]}>
+      {/* <ToolTip position={[-(formWidth / 2) - 0.2, (height / 2) + 0.2, 0]} cameraPosition={getCameraPosition(cameraPosition)} yOffset={yOffset} /> */}
+
+      <MeasuredWrapper key={index} index={index} onMeasure={handleMeasure}>
           {React.cloneElement(child, { width: formWidth, heightPos: yOffset })}
-        </group>
       </MeasuredWrapper>
+        </group>
+      </>
     );
   });
 

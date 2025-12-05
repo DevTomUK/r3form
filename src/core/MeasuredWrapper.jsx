@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 
 function MeasuredWrapper({ index, onMeasure, children }) {
   const groupRef = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (groupRef.current) {
       const box = new THREE.Box3().setFromObject(groupRef.current);
       const size = new THREE.Vector3();
