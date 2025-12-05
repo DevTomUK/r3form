@@ -13,7 +13,6 @@ export default function Switch3D({
   borderWidth = 0.05,
   borderDepth = 0.1,
   toggleWidth = 0.6,
-  heightPos = 0
 }) {
   const toggleRef = useRef();
   const trackRef = useRef();
@@ -85,7 +84,6 @@ export default function Switch3D({
 
   return (
     <group
-      position={[position[0], heightPos, position[2]]}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onPointerDown={toggle}

@@ -46,7 +46,9 @@ export default function R3Form({
 
     return (
       <MeasuredWrapper key={index} index={index} onMeasure={handleMeasure}>
-        {React.cloneElement(child, { width: formWidth, heightPos: yOffset })}
+        <group position={[0, yOffset, 0]}>
+          {React.cloneElement(child, { width: formWidth, heightPos: yOffset })}
+        </group>
       </MeasuredWrapper>
     );
   });

@@ -15,7 +15,6 @@ export default function BaseButton({
   pressDepth = -0.05,
   label = "Button",
   fontSize = 0.3,
-  heightPos = 0,
   onClick = () => {},
 }) {
   const groupRef = useRef();
@@ -42,7 +41,6 @@ export default function BaseButton({
   return (
     <group
       ref={groupRef}
-      position={[0, heightPos, 0]}
       onPointerOver={() => (hoveredRef.current = true)}
       onPointerOut={() => (hoveredRef.current = false)}
       onPointerDown={(e) => {

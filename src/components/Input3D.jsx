@@ -13,7 +13,6 @@ export default function Input3D({
   borderDepth = 0.1,
   hoverDepth = 0.1,
   showFieldBackground = false,
-  heightPos = 0,
 }) {
   // Context (value, focus control)
   const { values, setValue, focusedInput, setFocusedInput } = useFormContext();
@@ -141,7 +140,6 @@ export default function Input3D({
   return (
     <group
       ref={groupRef}
-      position={[0, heightPos, 0]}
       onPointerOver={() => setHovered(true)}
       onPointerOut={() => setHovered(false)}
       onPointerDown={(e) => {
