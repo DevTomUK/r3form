@@ -4,3 +4,4 @@ export { default as Input3D } from "./components/Input3D";
 export { default as Switch3D } from "./components/Switch3D";
 export { default as BaseButton } from "./components/buttons/BaseButton";
 export { default as SubmitButton } from "./components/buttons/SubmitButton";
+export { default as TextArea3D } from "./components/TextArea3D"
