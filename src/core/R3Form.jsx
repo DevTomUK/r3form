@@ -73,7 +73,7 @@ export default function R3Form({
             formColor={formColor}
           />
 
-          <ambientLight intensity={1} />
+          <ambientLight intensity={2} />
           <directionalLight
             position={[15, 20, 40]}
             intensity={0.4}
